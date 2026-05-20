@@ -16,7 +16,7 @@ architecture ctl_a of ctl_e is
 	
 begin	
 	process (clk)
-	variable count, output : std_logic_vector(31 downto 0):= start;
+	variable count, output : std_logic_vector(31 downto 0):= start; --count and output to separated immidiate/concurential execution
 	variable rst_flag : std_logic := '0';
 	variable state : std_logic_vector(1 downto 0) := b"00";
 	begin
