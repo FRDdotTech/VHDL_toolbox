@@ -40,7 +40,7 @@ begin
 			count := count + step;
 		end if;
 	
-		if count > x"f" then
+		if count > x"00000010" then
 			overflow <= '1';
 		end if;
 		

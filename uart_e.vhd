@@ -6,7 +6,7 @@ use IEEE.STD_LOGIC_signed.ALL;
 
 
 entity uart_e is
-	port(clk, rst : in std_logic;
+	port(clk: in std_logic;
 			data_valid : in std_logic := '1';
 			en, br : in std_logic;
 			TX: out std_logic := '1');
