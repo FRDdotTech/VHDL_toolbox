@@ -315,67 +315,6 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
-	(rect 64 208 256 320)
-	(text "compt_e" (rect 5 0 47 12)(font "Arial" ))
-	(text "inst" (rect 8 96 25 108)(font "Arial" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "clk" (rect 0 0 14 12)(font "Arial" ))
-		(text "clk" (rect 21 27 35 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32))
-	)
-	(port
-		(pt 0 48)
-		(input)
-		(text "En" (rect 0 0 12 12)(font "Arial" ))
-		(text "En" (rect 21 43 33 55)(font "Arial" ))
-		(line (pt 0 48)(pt 16 48))
-	)
-	(port
-		(pt 0 64)
-		(input)
-		(text "reload" (rect 0 0 29 12)(font "Arial" ))
-		(text "reload" (rect 21 59 50 71)(font "Arial" ))
-		(line (pt 0 64)(pt 16 64))
-	)
-	(port
-		(pt 0 80)
-		(input)
-		(text "step[2..0]" (rect 0 0 47 12)(font "Arial" ))
-		(text "step[2..0]" (rect 21 75 68 87)(font "Arial" ))
-		(line (pt 0 80)(pt 16 80)(line_width 3))
-	)
-	(port
-		(pt 192 32)
-		(output)
-		(text "val_out[31..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "val_out[31..0]" (rect 114 27 182 39)(font "Arial" ))
-		(line (pt 192 32)(pt 176 32)(line_width 3))
-	)
-	(port
-		(pt 192 48)
-		(output)
-		(text "overflow" (rect 0 0 42 12)(font "Arial" ))
-		(text "overflow" (rect 136 43 178 55)(font "Arial" ))
-		(line (pt 192 48)(pt 176 48))
-	)
-	(parameter
-		"start"
-		"00000000"
-		""
-		(type "PARAMETER_UNSIGNED_HEX")	)
-	(parameter
-		"stop"
-		"00000020"
-		""
-		(type "PARAMETER_UNSIGNED_HEX")	)
-	(drawing
-		(rectangle (rect 16 16 176 96))
-	)
-	(annotation_block (parameter)(rect 64 128 251 185))
-)
-(symbol
 	(rect 8 480 160 560)
 	(text "BRGH_e" (rect 5 0 48 12)(font "Arial" ))
 	(text "inst7" (rect 8 64 30 81)(font "Intel Clear" ))
@@ -478,6 +417,67 @@ refer to the applicable agreement for further details.
 		(line (pt 14 12)(pt 14 37))
 		(arc (pt 31 37)(pt 30 12)(rect 18 12 43 37))
 	)
+)
+(symbol
+	(rect 64 208 256 320)
+	(text "compt_e" (rect 5 0 47 12)(font "Arial" ))
+	(text "inst" (rect 8 96 25 108)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "En" (rect 0 0 12 12)(font "Arial" ))
+		(text "En" (rect 21 43 33 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "reload" (rect 0 0 29 12)(font "Arial" ))
+		(text "reload" (rect 21 59 50 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "step[2..0]" (rect 0 0 47 12)(font "Arial" ))
+		(text "step[2..0]" (rect 21 75 68 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80)(line_width 3))
+	)
+	(port
+		(pt 192 32)
+		(output)
+		(text "val_out[31..0]" (rect 0 0 68 12)(font "Arial" ))
+		(text "val_out[31..0]" (rect 114 27 182 39)(font "Arial" ))
+		(line (pt 192 32)(pt 176 32)(line_width 3))
+	)
+	(port
+		(pt 192 48)
+		(output)
+		(text "overflow" (rect 0 0 42 12)(font "Arial" ))
+		(text "overflow" (rect 136 43 178 55)(font "Arial" ))
+		(line (pt 192 48)(pt 176 48))
+	)
+	(parameter
+		"start"
+		"00000000"
+		""
+		(type "PARAMETER_UNSIGNED_HEX")	)
+	(parameter
+		"stop"
+		"00000010"
+		""
+		(type "PARAMETER_UNSIGNED_HEX")	)
+	(drawing
+		(rectangle (rect 16 16 176 96))
+	)
+	(annotation_block (parameter)(rect 64 128 251 185))
 )
 (connector
 	(pt -352 256)
@@ -657,7 +657,7 @@ refer to the applicable agreement for further details.
 (title_block
 	(rect 536 8 904 128)
 	(section (rect 0 24 368 48)(text "COMPANY" (rect 2 0 57 12)(font "Arial" ))(text "ALTERA CORPORATION" (rect 56 2 289 20)(font "Arial" (font_size 12)))(border))
-	(section (rect 0 96 240 120)(text "DATE" (rect 2 0 30 12)(font "Arial" ))(text "Wed May 20 16:39:32 2026" (rect 56 3 244 19)(font "Arial" (font_size 10)))(date)(border))
+	(section (rect 0 96 240 120)(text "DATE" (rect 2 0 30 12)(font "Arial" ))(text "Wed May 20 16:43:02 2026" (rect 56 3 244 19)(font "Arial" (font_size 10)))(date)(border))
 	(section (rect 0 48 368 72)(text "DESIGNER" (rect 2 0 59 12)(font "Arial" ))(text "Antoine FRAYARD" (rect 56 2 221 20)(font "Arial" (font_size 12)))(border))
 	(section (rect 0 72 280 96)(text "NUMBER" (rect 2 0 49 12)(font "Arial" ))(text "1.00" (rect 56 1 85 17)(font "Arial" (font_size 10)))(border))
 	(section (rect 310 96 368 120)(text "OF" (rect 10 0 25 12)(font "Arial" ))(text "1" (rect 34 4 42 20)(font "Arial" (font_size 10))))
