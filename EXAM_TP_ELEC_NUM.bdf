@@ -55,7 +55,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(input)
-	(rect -328 456 -160 472)
+	(rect -664 448 -496 464)
 	(text "INPUT" (rect 125 0 153 10)(font "Arial" (font_size 6)))
 	(text "SW[7..0]" (rect 5 0 48 12)(font "Arial" ))
 	(pt 168 8)
@@ -68,7 +68,7 @@ refer to the applicable agreement for further details.
 		(line (pt 109 12)(pt 113 8))
 	)
 	(text "VCC" (rect 128 7 148 17)(font "Arial" (font_size 6)))
-	(annotation_block (location)(rect -400 472 -328 592))
+	(annotation_block (location)(rect -736 464 -664 584))
 )
 (pin
 	(input)
@@ -140,7 +140,7 @@ refer to the applicable agreement for further details.
 )
 (pin
 	(output)
-	(rect 712 592 888 608)
+	(rect 256 248 432 264)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "sampling_LED" (rect 90 0 160 12)(font "Arial" ))
 	(pt 0 8)
@@ -153,11 +153,11 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 888 608 944 632))
+	(annotation_block (location)(rect 432 264 488 288))
 )
 (pin
 	(output)
-	(rect 696 680 872 696)
+	(rect 760 328 936 344)
 	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
 	(text "data_valid_led" (rect 90 0 160 12)(font "Arial" ))
 	(pt 0 8)
@@ -170,28 +170,22 @@ refer to the applicable agreement for further details.
 		(line (pt 82 8)(pt 78 12))
 		(line (pt 78 12)(pt 82 8))
 	)
-	(annotation_block (location)(rect 936 696 992 720))
+	(annotation_block (location)(rect 1000 344 1056 368))
 )
-(symbol
-	(rect 544 168 696 248)
-	(text "seven_seg_e" (rect 5 0 71 12)(font "Arial" ))
-	(text "inst6" (rect 8 64 30 81)(font "Intel Clear" ))
-	(port
-		(pt 0 32)
-		(input)
-		(text "A[7..0]" (rect 0 0 33 12)(font "Arial" ))
-		(text "A[7..0]" (rect 21 27 54 39)(font "Arial" ))
-		(line (pt 0 32)(pt 16 32)(line_width 3))
-	)
-	(port
-		(pt 152 32)
-		(output)
-		(text "S[6..0]" (rect 0 0 33 12)(font "Arial" ))
-		(text "S[6..0]" (rect 104 27 137 39)(font "Arial" ))
-		(line (pt 152 32)(pt 136 32)(line_width 3))
-	)
+(pin
+	(output)
+	(rect 600 448 776 464)
+	(text "OUTPUT" (rect 1 0 39 10)(font "Arial" (font_size 6)))
+	(text "UART_TX" (rect 90 0 137 12)(font "Arial" ))
+	(pt 0 8)
 	(drawing
-		(rectangle (rect 16 16 136 64))
+		(line (pt 0 8)(pt 52 8))
+		(line (pt 52 4)(pt 78 4))
+		(line (pt 52 12)(pt 78 12))
+		(line (pt 52 12)(pt 52 4))
+		(line (pt 78 4)(pt 82 8))
+		(line (pt 82 8)(pt 78 12))
+		(line (pt 78 12)(pt 82 8))
 	)
 )
 (symbol
@@ -298,6 +292,28 @@ refer to the applicable agreement for further details.
 	)
 )
 (symbol
+	(rect 544 168 696 248)
+	(text "seven_seg_e" (rect 5 0 71 12)(font "Arial" ))
+	(text "inst6" (rect 8 64 31 76)(font "Arial" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "A[3..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "A[3..0]" (rect 21 27 54 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32)(line_width 3))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "S[6..0]" (rect 0 0 33 12)(font "Arial" ))
+		(text "S[6..0]" (rect 104 27 131 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32)(line_width 3))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 64))
+	)
+)
+(symbol
 	(rect 64 208 256 320)
 	(text "compt_e" (rect 5 0 47 12)(font "Arial" ))
 	(text "inst" (rect 8 96 25 108)(font "Arial" ))
@@ -333,8 +349,15 @@ refer to the applicable agreement for further details.
 		(pt 192 32)
 		(output)
 		(text "val_out[31..0]" (rect 0 0 68 12)(font "Arial" ))
-		(text "val_out[31..0]" (rect 114 27 171 39)(font "Arial" ))
+		(text "val_out[31..0]" (rect 114 27 182 39)(font "Arial" ))
 		(line (pt 192 32)(pt 176 32)(line_width 3))
+	)
+	(port
+		(pt 192 48)
+		(output)
+		(text "overflow" (rect 0 0 42 12)(font "Arial" ))
+		(text "overflow" (rect 136 43 178 55)(font "Arial" ))
+		(line (pt 192 48)(pt 176 48))
 	)
 	(parameter
 		"start"
@@ -351,6 +374,85 @@ refer to the applicable agreement for further details.
 	)
 	(annotation_block (parameter)(rect 64 128 251 185))
 )
+(symbol
+	(rect 8 472 160 552)
+	(text "BRGH_e" (rect 5 0 48 12)(font "Arial" ))
+	(text "inst7" (rect 8 64 30 81)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk_in" (rect 0 0 28 12)(font "Arial" ))
+		(text "clk_in" (rect 21 27 49 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "sel" (rect 0 0 14 12)(font "Arial" ))
+		(text "sel" (rect 21 43 35 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "clk_out" (rect 0 0 35 12)(font "Arial" ))
+		(text "clk_out" (rect 102 27 137 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 64))
+	)
+)
+(symbol
+	(rect 384 424 536 568)
+	(text "uart_e" (rect 5 0 35 12)(font "Arial" ))
+	(text "inst8" (rect 8 128 30 145)(font "Intel Clear" ))
+	(port
+		(pt 0 32)
+		(input)
+		(text "clk" (rect 0 0 14 12)(font "Arial" ))
+		(text "clk" (rect 21 27 35 39)(font "Arial" ))
+		(line (pt 0 32)(pt 16 32))
+	)
+	(port
+		(pt 0 48)
+		(input)
+		(text "rst" (rect 0 0 12 12)(font "Arial" ))
+		(text "rst" (rect 21 43 33 55)(font "Arial" ))
+		(line (pt 0 48)(pt 16 48))
+	)
+	(port
+		(pt 0 64)
+		(input)
+		(text "data_valid" (rect 0 0 50 12)(font "Arial" ))
+		(text "data_valid" (rect 21 59 71 71)(font "Arial" ))
+		(line (pt 0 64)(pt 16 64))
+	)
+	(port
+		(pt 0 80)
+		(input)
+		(text "en" (rect 0 0 11 12)(font "Arial" ))
+		(text "en" (rect 21 75 32 87)(font "Arial" ))
+		(line (pt 0 80)(pt 16 80))
+	)
+	(port
+		(pt 0 96)
+		(input)
+		(text "br" (rect 0 0 9 12)(font "Arial" ))
+		(text "br" (rect 21 91 30 103)(font "Arial" ))
+		(line (pt 0 96)(pt 16 96))
+	)
+	(port
+		(pt 152 32)
+		(output)
+		(text "TX" (rect 0 0 11 12)(font "Arial" ))
+		(text "TX" (rect 122 27 133 39)(font "Arial" ))
+		(line (pt 152 32)(pt 136 32))
+	)
+	(drawing
+		(rectangle (rect 16 16 136 128))
+	)
+)
 (connector
 	(pt -352 256)
 	(pt -392 256)
@@ -364,10 +466,6 @@ refer to the applicable agreement for further details.
 	(pt -440 8)
 )
 (connector
-	(pt 688 688)
-	(pt 696 688)
-)
-(connector
 	(pt -112 352)
 	(pt -96 352)
 )
@@ -378,10 +476,6 @@ refer to the applicable agreement for further details.
 (connector
 	(pt -448 64)
 	(pt -440 64)
-)
-(connector
-	(pt -80 8)
-	(pt -80 240)
 )
 (connector
 	(pt -392 8)
@@ -400,12 +494,6 @@ refer to the applicable agreement for further details.
 	(pt -200 256)
 )
 (connector
-	(text "seg_out[7..0]" (rect 466 184 527 201)(font "Intel Clear" ))
-	(pt 544 200)
-	(pt 456 200)
-	(bus)
-)
-(connector
 	(text "seg_out[31..0]" (rect 256 224 323 241)(font "Intel Clear" ))
 	(pt 256 240)
 	(pt 312 240)
@@ -417,17 +505,7 @@ refer to the applicable agreement for further details.
 )
 (connector
 	(pt -32 272)
-	(pt -32 320)
-)
-(connector
-	(pt -32 272)
 	(pt 64 272)
-)
-(connector
-	(text "steps[7..0]" (rect -158 448 -110 465)(font "Intel Clear" ))
-	(pt -160 464)
-	(pt -88 464)
-	(bus)
 )
 (connector
 	(text "steps[2..0]" (rect 18 272 66 289)(font "Intel Clear" ))
@@ -435,12 +513,87 @@ refer to the applicable agreement for further details.
 	(pt 8 288)
 	(bus)
 )
+(connector
+	(text "seg_out[3..0]" (rect 466 184 527 201)(font "Intel Clear" ))
+	(pt 544 200)
+	(pt 456 200)
+	(bus)
+)
+(connector
+	(text "steps[7..0]" (rect -494 440 -446 457)(font "Intel Clear" ))
+	(pt -496 456)
+	(pt -424 456)
+	(bus)
+)
+(connector
+	(pt -80 504)
+	(pt 8 504)
+)
+(connector
+	(pt -80 8)
+	(pt -80 240)
+)
+(connector
+	(pt 160 504)
+	(pt 384 504)
+)
+(connector
+	(pt 384 456)
+	(pt -80 456)
+)
+(connector
+	(pt -80 240)
+	(pt -80 456)
+)
+(connector
+	(pt -80 456)
+	(pt -80 504)
+)
+(connector
+	(pt 384 472)
+	(pt 176 472)
+)
+(connector
+	(pt 176 472)
+	(pt 176 376)
+)
+(connector
+	(pt -32 376)
+	(pt 176 376)
+)
+(connector
+	(pt -32 272)
+	(pt -32 320)
+)
+(connector
+	(pt -32 320)
+	(pt -32 376)
+)
+(connector
+	(pt 752 336)
+	(pt 760 336)
+)
+(connector
+	(pt 536 456)
+	(pt 600 456)
+)
+(connector
+	(pt 256 520)
+	(pt 384 520)
+)
+(connector
+	(pt 256 520)
+	(pt 256 256)
+)
 (junction (pt -392 8))
 (junction (pt -80 8))
+(junction (pt -80 240))
+(junction (pt -80 456))
+(junction (pt -32 320))
 (title_block
 	(rect 536 8 904 128)
 	(section (rect 0 24 368 48)(text "COMPANY" (rect 2 0 57 12)(font "Arial" ))(text "ALTERA CORPORATION" (rect 56 2 289 20)(font "Arial" (font_size 12)))(border))
-	(section (rect 0 96 240 120)(text "DATE" (rect 2 0 30 12)(font "Arial" ))(text "Wed May 20 15:56:40 2026" (rect 56 3 244 19)(font "Arial" (font_size 10)))(date)(border))
+	(section (rect 0 96 240 120)(text "DATE" (rect 2 0 30 12)(font "Arial" ))(text "Wed May 20 16:11:08 2026" (rect 56 3 244 19)(font "Arial" (font_size 10)))(date)(border))
 	(section (rect 0 48 368 72)(text "DESIGNER" (rect 2 0 59 12)(font "Arial" ))(text "Antoine FRAYARD" (rect 56 2 221 20)(font "Arial" (font_size 12)))(border))
 	(section (rect 0 72 280 96)(text "NUMBER" (rect 2 0 49 12)(font "Arial" ))(text "1.00" (rect 56 1 85 17)(font "Arial" (font_size 10)))(border))
 	(section (rect 310 96 368 120)(text "OF" (rect 10 0 25 12)(font "Arial" ))(text "1" (rect 34 4 42 20)(font "Arial" (font_size 10))))
