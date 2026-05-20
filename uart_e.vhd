@@ -24,7 +24,7 @@ begin
 	if data_valid = '1' then
 		message := b"1010000100";	--char "B" LSB fisrt (data valid)
 	else
-		message := b"1010001010";	--char "E" LSB fisrt (data error)
+		message := b"1010100110";	--char "S" LSB fisrt (over flow)
 	end if;
 	
 	if clk'event and clk = '1' then

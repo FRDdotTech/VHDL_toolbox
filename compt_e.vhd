@@ -23,25 +23,21 @@ begin
 	begin
 	if clk'event and clk='1' then
 		if reload = '1'then
-			count := x"00000000";
+			count := start;
 			count := count + step;
 			overflow <= '0';
+			rst_flag := '0';
 		end if;
 		
 		if rst_flag = '1'then
 			count := start;
 			output := start;
-			rst_flag := '0';
-			overflow <= '0';
+			overflow <= '1';
 		end if;
 		
-		if En = '1' then
+		if En = '1' and rst_flag = '0' then
 			output := count;
 			count := count + step;
-		end if;
-	
-		if count > x"00000010" then
-			overflow <= '1';
 		end if;
 		
 		if count > stop then
